@@ -19,7 +19,7 @@ func get_closest_distance(pos:Vector3) -> float:
 	for point in points_progress :
 		if (point.global_position - pos).length() < (closest_point.global_position - pos).length():
 			closest_point = point
-	return points_progress[closest_point]
+	return (closest_point.global_position-pos).length()
 
 func get_closest_index(pos:Vector3) -> int:
 	var closest_point = points_progress.keys()[0]

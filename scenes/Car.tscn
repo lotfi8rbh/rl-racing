@@ -1,9 +1,13 @@
-[gd_scene load_steps=22 format=4 uid="uid://xal8aq7y1sl7"]
+[gd_scene load_steps=24 format=4 uid="uid://xal8aq7y1sl7"]
 
 [ext_resource type="Shader" uid="uid://dhbb1nq2opgu8" path="res://scenes/Basic.gdshader" id="1_7u4s5"]
 [ext_resource type="Script" uid="uid://dgu1fg7hqhg4u" path="res://scenes/vehicule.gd" id="1_fbyd5"]
 [ext_resource type="Texture2D" uid="uid://11c5cb0byeb4" path="res://graphics/textures/Palette_Red.png" id="2_ys5ts"]
-[ext_resource type="Script" uid="uid://vlri46vr0ihc" path="res://scenes/car.gd" id="3_qn377"]
+[ext_resource type="Script" uid="uid://vlri46vr0ihc" path="res://scenes/car_ai_controller.gd" id="3_qn377"]
+[ext_resource type="Script" uid="uid://dge8bjxoyc7xx" path="res://scenes/raycast_sensor_3d_add_set_collision_mask_value.gd" id="5_t6kce"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6kce"]
+friction = 0.55
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ys5ts"]
 radius = 1.05479
@@ -351,12 +355,18 @@ shadow_mesh = SubResource("ArrayMesh_efcpn")
 [sub_resource type="BoxShape3D" id="BoxShape3D_fbyd5"]
 size = Vector3(2.25293, 1.25513, 5.10098)
 
-[node name="Car" type="CharacterBody3D"]
-collision_layer = 2
-collision_mask = 4
+[node name="Car" type="RigidBody3D"]
+collision_layer = 0
+collision_mask = 0
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_t6kce")
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+linear_damp = 1.0
+angular_damp = 1.0
 script = ExtResource("1_fbyd5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -396,130 +406,158 @@ script = ExtResource("3_qn377")
 [node name="Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.787334, -1.1798)
 shape = SubResource("BoxShape3D_fbyd5")
 
 [node name="Raycasts" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_t6kce")
+collision_mask = 4
+boolean_class_mask = 4
 
 [node name="R1" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R2" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.965926, -0.258819, -1.13133e-08, 0, -4.37114e-08, 1, -0.258819, -0.965926, -4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R3" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, -0.866025, -3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R4" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R5" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.5, -0.866025, -3.78552e-08, 0, -4.37114e-08, 1, -0.866025, -0.5, -2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R6" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, -0.258819, -1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R7" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-5.96046e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 5.96046e-08, 4.44089e-15, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R8" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, 0.258819, 1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R9" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.5, -0.866025, -3.78552e-08, -9.1951e-16, -4.37114e-08, 1, -0.866025, 0.5, 2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R10" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.707107, -0.707107, -3.09086e-08, -9.1951e-16, -4.37114e-08, 1, -0.707107, 0.707107, 3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R11" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 1.59264e-15, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R12" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.965926, -0.258819, -1.13133e-08, 1.35465e-15, -4.37114e-08, 1, -0.258819, 0.965926, 4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R13" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-1, 2.98023e-08, 3.55271e-15, 2.27416e-15, -4.37114e-08, 1, 2.98023e-08, 1, 4.37114e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R14" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.965926, 0.258819, 1.13133e-08, 2.27416e-15, -4.37114e-08, 1, 0.258819, 0.965926, 4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R15" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.866025, 0.5, 2.18557e-08, 4.96737e-16, -4.37114e-08, 1, 0.5, 0.866025, 3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R16" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.707107, 0.707107, 3.09086e-08, 4.96737e-16, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R17" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.5, 0.866025, 3.78552e-08, 3.00888e-15, -4.37114e-08, 1, 0.866025, 0.5, 2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R18" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.258819, 0.965926, 4.2222e-08, 2.7709e-15, -4.37114e-08, 1, 0.965926, 0.258819, 1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R19" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(2.98023e-08, 1, 4.37114e-08, 3.69041e-15, -4.37114e-08, 1, 1, -2.98023e-08, -6.21725e-15, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R20" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.258819, 0.965926, 4.2222e-08, 3.69041e-15, -4.37114e-08, 1, 0.965926, -0.258819, -1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R21" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.5, 0.866025, 3.78552e-08, 1.91298e-15, -4.37114e-08, 1, 0.866025, -0.5, -2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R22" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 1.91298e-15, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R23" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.866025, 0.5, 2.18557e-08, 4.42513e-15, -4.37114e-08, 1, 0.5, -0.866025, -3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true
 
 [node name="R24" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.965926, 0.258819, 1.13133e-08, 4.18714e-15, -4.37114e-08, 1, 0.258819, -0.965926, -4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
+hit_from_inside = true

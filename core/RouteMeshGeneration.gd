@@ -84,11 +84,7 @@ func generate()-> void :
 	
 	%PathFollow3D.progress_ratio = 0.
 
-var car_packed_scene : PackedScene = preload("res://scenes/Car.tscn")
 func _ready() -> void:
 	if Engine.is_editor_hint() : return
 	%PathFollow3D.progress_ratio = 0
-
-	var car : Node3D = car_packed_scene.instantiate()
-	add_child(car)
-	car.global_position = %PathFollow3D.global_position + Vector3.UP*.1
+	Game.start_transform = %PathFollow3D.global_transform
