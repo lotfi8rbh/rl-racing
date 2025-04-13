@@ -423,141 +423,165 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.3
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R2" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.965926, -0.258819, -1.13133e-08, 0, -4.37114e-08, 1, -0.258819, -0.965926, -4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R3" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, -0.866025, -3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R4" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.707107, -0.707107, -3.09086e-08, 0, -4.37114e-08, 1, -0.707107, -0.707107, -3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R5" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.5, -0.866025, -3.78552e-08, 0, -4.37114e-08, 1, -0.866025, -0.5, -2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R6" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, -0.258819, -1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R7" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-5.96046e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 5.96046e-08, 4.44089e-15, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R8" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, 0.258819, 1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R9" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.5, -0.866025, -3.78552e-08, -9.1951e-16, -4.37114e-08, 1, -0.866025, 0.5, 2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R10" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.707107, -0.707107, -3.09086e-08, -9.1951e-16, -4.37114e-08, 1, -0.707107, 0.707107, 3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R11" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 1.59264e-15, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R12" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.965926, -0.258819, -1.13133e-08, 1.35465e-15, -4.37114e-08, 1, -0.258819, 0.965926, 4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R13" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-1, 2.98023e-08, 3.55271e-15, 2.27416e-15, -4.37114e-08, 1, 2.98023e-08, 1, 4.37114e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R14" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.965926, 0.258819, 1.13133e-08, 2.27416e-15, -4.37114e-08, 1, 0.258819, 0.965926, 4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R15" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.866025, 0.5, 2.18557e-08, 4.96737e-16, -4.37114e-08, 1, 0.5, 0.866025, 3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R16" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.707107, 0.707107, 3.09086e-08, 4.96737e-16, -4.37114e-08, 1, 0.707107, 0.707107, 3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R17" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.5, 0.866025, 3.78552e-08, 3.00888e-15, -4.37114e-08, 1, 0.866025, 0.5, 2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R18" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(-0.258819, 0.965926, 4.2222e-08, 2.7709e-15, -4.37114e-08, 1, 0.965926, 0.258819, 1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R19" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(2.98023e-08, 1, 4.37114e-08, 3.69041e-15, -4.37114e-08, 1, 1, -2.98023e-08, -6.21725e-15, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R20" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.258819, 0.965926, 4.2222e-08, 3.69041e-15, -4.37114e-08, 1, 0.965926, -0.258819, -1.13133e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R21" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.5, 0.866025, 3.78552e-08, 1.91298e-15, -4.37114e-08, 1, 0.866025, -0.5, -2.18557e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R22" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.707107, 0.707107, 3.09086e-08, 1.91298e-15, -4.37114e-08, 1, 0.707107, -0.707107, -3.09086e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R23" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.866025, 0.5, 2.18557e-08, 4.42513e-15, -4.37114e-08, 1, 0.5, -0.866025, -3.78552e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)
 
 [node name="R24" type="RayCast3D" parent="Raycasts"]
 transform = Transform3D(0.965926, 0.258819, 1.13133e-08, 4.18714e-15, -4.37114e-08, 1, 0.258819, -0.965926, -4.2222e-08, 0, 0.34088, 0)
 target_position = Vector3(0, -45, 0)
 collision_mask = 4
 hit_from_inside = true
+debug_shape_custom_color = Color(4.81308e-08, 0.606833, 0.423273, 1)

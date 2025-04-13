@@ -3,7 +3,6 @@
 [ext_resource type="Shader" uid="uid://deygxii6pmlkr" path="res://graphics/road.gdshader" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://bim4nqkrplmac" path="res://core/RouteMeshGeneration.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://dsq8iog1xw3v1" path="res://graphics/road.png" id="2_1bvp3"]
-[ext_resource type="Script" uid="uid://b44ej2eiqxol0" path="res://serv/aaaa.cs" id="3_4c57u"]
 [ext_resource type="Script" uid="uid://co3nbrbvlnn2e" path="res://addons/godot_rl_agents/sync.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dr5yiqwq0etf4" path="res://core/PointGenerator.gd" id="5_272bh"]
 [ext_resource type="Script" uid="uid://s0vegrphypjk" path="res://core/CameraControlls.gd" id="5_lquwl"]
@@ -57,10 +56,18 @@ data = PackedVector3Array(-74.8721, 0, 0.2949, -74.3649, 0, 0.0602, -74.8721, 2,
 [sub_resource type="Curve3D" id="Curve3D_5vw27"]
 closed = true
 _data = {
-"points": PackedVector3Array(-31.6183, 0.0887699, 15.1279, 31.6183, -0.0887699, -15.1279, -79.5233, 0, -6.1563, -29.5957, 0, 7.39893, 29.5957, 0, -7.39893, 45.9369, 0, 10.6085, -13.481, 0.137321, 4.5134, 13.481, -0.137321, -4.5134, 75.2751, 0, -3.60209, -13.7098, 6.0752e-05, 8.51769, 13.7098, -6.0752e-05, -8.51769, 116.356, 0, -10.4027, 19.9897, -1.9527, 4.4257, -19.9897, 1.9527, -4.4257, 122.62, 0, -75.2974, 11.9911, -1.09064, 3.99194, -11.9911, 1.09064, -3.99194, 87.4552, 0, -77.6124, 2.18029, -3.78491, 30.1763, -2.18029, 3.78491, -30.1763, 68.8935, 0, -116.977, 3.23889, -0.303688, -62.1738, -3.23889, 0.303688, 62.1738, -9.00244, 0, -124.666, 51.4708, 0, -8.04232, -51.4708, 0, 8.04232, -86.6005, 0, -88.1511, -13.3551, 0.696146, -40.9392, 13.3551, -0.696146, 40.9392, -131.498, 0, -36.4664),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(-31.6183, 0.0887699, 15.1279, 31.6183, -0.0887699, -15.1279, -65.6157, 0, 24.8378, -13.7098, 6.0752e-05, 8.51769, 13.7098, -6.0752e-05, -8.51769, 126.29, 0, 25.7571, 19.9897, -1.9527, 4.4257, -19.9897, 1.9527, -4.4257, 125.402, 0, -102.318, 51.4708, 0, -8.04232, -51.4708, 0, 8.04232, -65.5404, 0, -105.238),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
 }
-point_count = 10
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_kek77"]
+closed = true
+_data = {
+"points": PackedVector3Array(-31.6183, 0.0887699, 15.1279, 31.6183, -0.0887699, -15.1279, -65.6157, 0, 24.8378, -13.7098, 6.0752e-05, 8.51769, 13.7098, -6.0752e-05, -8.51769, 126.29, 0, 25.7571, 19.9897, -1.9527, 4.4257, -19.9897, 1.9527, -4.4257, 125.402, 0, -102.318, 51.4708, 0, -8.04232, -51.4708, 0, 8.04232, -65.5404, 0, -105.238),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="Main" type="Node"]
 script = ExtResource("1_ig7tw")
@@ -89,7 +96,6 @@ environment = SubResource("Environment_1bvp3")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.771591, -0.612841, -0.170508, 0.169687, -0.456627, 0.873326, -0.613068, 0.644917, 0.456322, 0, 0, 0)
 shadow_enabled = true
-script = ExtResource("3_4c57u")
 
 [node name="RoadMeshInstance3D" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
@@ -128,9 +134,24 @@ path_width = 15.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 unique_name_in_owner = true
-transform = Transform3D(0.431526, 0.00228387, -0.901918, 0, 0.999695, 0.00253218, 0.901918, -0.00109273, 0.431526, -79.5233, 0, -6.1563)
+transform = Transform3D(0.431526, 0.00228387, -0.901918, 1.16396e-10, 0.999695, 0.00253218, 0.901918, -0.00109273, 0.431526, -65.6157, 0, 24.8378)
 
 [node name="PointGenerator" type="Node" parent="Path3D"]
+script = ExtResource("5_272bh")
+
+[node name="Path3D2" type="Path3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41418, 0, -216.823)
+curve = SubResource("Curve3D_kek77")
+script = ExtResource("1_ig7tw")
+iteration_count = 1000
+wall_height = 2.0
+path_width = 15.0
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
+transform = Transform3D(0.431526, 0.00228387, -0.901918, 1.16396e-10, 0.999695, 0.00253218, 0.901918, -0.00109273, 0.431526, -65.6157, 0, 24.8378)
+
+[node name="PointGenerator" type="Node" parent="Path3D2"]
 script = ExtResource("5_272bh")
 
 [node name="CameraPivotY" type="Node3D" parent="."]
@@ -147,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 script = ExtResource("5_7mycd")
 control_mode = 2
 speed_up = 8
-onnx_model_path = "serv/final_model.zip"
+onnx_model_path = "res://serv/final_model.zip"
 metadata/_custom_type_script = "uid://co3nbrbvlnn2e"
 
 [node name="CarManager" type="Node3D" parent="." node_paths=PackedStringArray("track")]
