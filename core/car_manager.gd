@@ -47,7 +47,7 @@ func spawn_cars(car_group_amount):
 			car.set_collision_layer_value(current_car_layer, true)
 			car.set_collision_mask_value(other_car_layer, true)
 
-			var car_transform: Transform3D = track.track_path.curve.sample_baked_with_rotation(0.0)
+			var car_transform: Transform3D = %PathFollow3D.global_transform
 			car_transform = car_transform.rotated_local(Vector3.UP, PI)
 			car_transform.origin += Vector3.UP
 			car_transform.origin += car_transform.basis.x * (car_id * 2.0 - 1.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c6jrbjjh1xcdg"]
+[gd_scene load_steps=19 format=4 uid="uid://c6jrbjjh1xcdg"]
 
 [ext_resource type="Script" uid="uid://bim4nqkrplmac" path="res://core/RouteMeshGeneration.gd" id="1_1fv5x"]
 [ext_resource type="Script" uid="uid://s0vegrphypjk" path="res://core/CameraControlls.gd" id="2_mawhg"]
@@ -61,14 +61,6 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve3D" id="Curve3D_kek77"]
-closed = true
-_data = {
-"points": PackedVector3Array(-31.6183, 0.0887699, 15.1279, 31.6183, -0.0887699, -15.1279, -65.6157, 0, 24.8378, -13.7098, 6.0752e-05, 8.51769, 13.7098, -6.0752e-05, -8.51769, 126.29, 0, 25.7571, 19.9897, -1.9527, 4.4257, -19.9897, 1.9527, -4.4257, 125.402, 0, -102.318, 51.4708, 0, -8.04232, -51.4708, 0, 8.04232, -65.5404, 0, -105.238),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
-
 [node name="Main" type="Node"]
 script = ExtResource("1_1fv5x")
 iteration_count = 500
@@ -117,6 +109,8 @@ skeleton = NodePath("../Path3D")
 script = -3694797843186319360
 
 [node name="WallMeshInstance3D_col" type="StaticBody3D" parent="WallMeshInstance3D"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WallMeshInstance3D/WallMeshInstance3D_col"]
 shape = SubResource("ConcavePolygonShape3D_bbj40")
@@ -132,24 +126,9 @@ path_width = 15.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 unique_name_in_owner = true
-transform = Transform3D(-0.524684, 0.00240037, -0.851097, -1.16396e-10, 0.999695, 0.00282021, 0.851103, 0.00147977, -0.524681, -65.6157, 0, 24.8378)
+transform = Transform3D(-0.524685, 0.00240037, -0.851097, 1.16396e-10, 0.999695, 0.00282021, 0.851103, 0.00147977, -0.524681, -65.6157, 0, 24.8378)
 
 [node name="PointGenerator" type="Node" parent="Path3D"]
-script = ExtResource("5_hrp0f")
-
-[node name="Path3D2" type="Path3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41418, 0, -216.823)
-curve = SubResource("Curve3D_kek77")
-script = ExtResource("1_1fv5x")
-iteration_count = 1000
-wall_height = 2.0
-path_width = 15.0
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(0.431526, 0.00228387, -0.901918, 1.16396e-10, 0.999695, 0.00253218, 0.901918, -0.00109273, 0.431526, -65.6157, 0, 24.8378)
-
-[node name="PointGenerator" type="Node" parent="Path3D2"]
 script = ExtResource("5_hrp0f")
 
 [node name="CameraPivotY" type="Node3D" parent="."]
@@ -164,7 +143,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 
 [node name="Sync" type="Node" parent="."]
 script = ExtResource("6_8q3wu")
-control_mode = 2
 speed_up = 8
 onnx_model_path = "res://serv/final_model.zip"
 metadata/_custom_type_script = "uid://co3nbrbvlnn2e"

@@ -11,7 +11,6 @@ var backward_acceleration_ratio = 0.75
 
 @onready var ai_controller: CarAIController = %AIController
 @onready var raycast_sensor_wall: RayCastSensor3D = %Raycasts
-@onready var camera: Camera3D = $"Camera3D"
 
 ## Set by AIController during inference
 var requested_acceleration: float
